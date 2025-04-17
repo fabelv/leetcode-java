@@ -1,6 +1,5 @@
-package net.elvfab;
+package net.elvfab.problems;
 
-import net.elvfab.problems.TwoSum;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
