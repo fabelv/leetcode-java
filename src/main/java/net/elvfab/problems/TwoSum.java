@@ -1,4 +1,4 @@
-package net.elvfab;
+package net.elvfab.problems;
 
 import java.util.HashMap;
 import java.util.Map;
