@@ -14,19 +14,28 @@ public class SquaresOfASortedArray {
     }
 
     public static int[] sortedSquares1(int[] nums) {
-        for (int i = nums.length - 1; i > 0; i--){
-            if (Math.abs(nums[0]) < Math.abs(nums[i])){
-                nums[i] = (int) Math.pow(nums[i], 2);
-            }else {
-                // swap
-                int tmp = nums[i];
-                nums[i] = (int) Math.pow(nums[0], 2);
-                nums[0] = tmp;
+        int n = nums.length;
+        int[] result = new int[n];
+
+        int left = 0;
+        int right = n - 1;
+        int pos = n - 1;
+
+        while (left <= right) {
+            int leftVal = nums[left];
+            int rightVal = nums[right];
+
+            if (Math.abs(leftVal) > Math.abs(rightVal)) {
+                result[pos] = leftVal * leftVal;
+                left++;
+            } else {
+                result[pos] = rightVal * rightVal;
+                right--;
             }
+
+            pos--;
         }
 
-        nums[0] = (int) Math.pow(nums[0], 2);
-
-        return nums;
+        return result;
     }
 }
